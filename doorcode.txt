@@ -1,0 +1,14 @@
+script.Parent.Touched:Connect(function(hit)
+    local player = game.Players:GetPlayerFromCharacter(hit.parent)
+    if player then
+         if player.PackBack:FindFirstChild("KeyCard") or hit.parent:FindFirstChild("KeyCard") then
+         script.Parent.Transparency = 1
+         script.Parent.CanCollide = false
+         script.Disabled  true
+         wait(2)
+         script.Disabled = false
+         script.Parent.CanCollide = true
+         script.Parent.transparency = 0
+        end
+    end
+end)
